@@ -1,0 +1,39 @@
+.clearfix() {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+.multi-ellipsis(@lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @lines;
+
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flex-center(@vertical: center, @horizontal: center) {
+  display: flex;
+  align-items: @vertical;
+  justify-content: @horizontal;
+}
+
+.flex-center-vertical() {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center-horizontal() {
+  display: flex;
+  justify-content: center;
+}

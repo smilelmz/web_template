@@ -1,0 +1,112 @@
+const Mock = require('mockjs')
+
+const getArray = (label, len, isNum = false) => {
+  const arrNum = new Array(100).fill('').map((_, index) => index)
+  // const arrNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+  return new Array(len).fill(label).map((item, index) => `${item}${isNum ? arrNum[index % 100] : arrNum[index % 100]}`)
+}
+module.exports = {
+  '/api/pupu/table/configs': Mock.mock({
+    code: 0,
+    data: {
+      tableConfig: {
+        'size|+1': ['middle', 'small'],
+        'bordered|1': true,
+        'showHeader|1': true,
+        footer: '表格Footer',
+        'rowSelection|1': true,
+        title: '表格标题',
+        tooltip: '表格标题描述',
+      },
+      toolbar: {
+        show: true,
+        'density|1': true,
+        'fullScreen|1': true,
+        setting: true,
+      },
+      'conditions|30': [
+        {
+          'label|+1': getArray('字段', 30),
+          'name|+1': getArray('field', 30, true),
+          'tooltip|+1': getArray('字段描述', 30),
+          'valueType|+1': [
+            'textarea',
+            'date',
+            'dateTime',
+            'dateWeek',
+            'dateMonth',
+            'dateQuarter',
+            'dateYear',
+            'dateRange',
+            'dateTimeRange',
+            'time',
+            'timeRange',
+            'text',
+            'select',
+            'checkbox',
+            'rate',
+            'radio',
+            'radioButton',
+            'progress',
+            'percent',
+            'digit',
+            'second',
+            'code',
+            'switch',
+          ],
+          'options|3': [
+            {
+              label: Mock.mock('@ctitle(3, 5)'),
+              'value|1-100': 100,
+            },
+          ],
+        },
+      ],
+      'columns|5-10': [
+        {
+          'title|+1': getArray('字段', 15),
+          'dataIndex|+1': getArray('field', 15, true),
+          'tooltip|+1': getArray('字段描述', 15),
+          'valueType|+1': [
+            'password',
+            'money',
+            'textarea',
+            'date',
+            'dateTime',
+            'dateWeek',
+            'dateMonth',
+            'dateQuarter',
+            'dateYear',
+            'dateRange',
+            'dateTimeRange',
+            'time',
+            'timeRange',
+            'text',
+            'select',
+            'checkbox',
+            'rate',
+            'radio',
+            'radioButton',
+            'progress',
+            'percent',
+            'digit',
+            'second',
+            'avatar',
+            'code',
+            'switch',
+            'fromNow',
+            'image',
+            'jsonCode',
+            'color',
+          ],
+          order: 0,
+          width: 100,
+          'ellipsis|1': true,
+          'copyable|1': true,
+          initialValue: '',
+        },
+      ],
+    },
+    msg: '成功',
+  }),
+}

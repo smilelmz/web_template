@@ -1,0 +1,25 @@
+.@{base-prefix}offline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__extra {
+    position: relative;
+    max-width: 590px;
+    text-align: left;
+
+    > div {
+      text-indent: 2em;
+
+      & + div {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__sign {
+    color: #ff6b6b;
+  }
+}

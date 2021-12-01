@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keyword %>" />
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta name="referrer" content="no-referrer" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      @keyframes antRotate {
+        100% {
+          transform: rotate(405deg);
+        }
+      }
+
+      @keyframes antSpinMove {
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .ant-spin-spinning {
+        position: static;
+        display: inline-block;
+        font-size: 14px;
+        opacity: 1;
+      }
+
+      .ant-spin {
+        position: absolute;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #1890ff;
+        font-size: 14px;
+        font-variant: tabular-nums;
+        line-height: 1.5715;
+        text-align: center;
+        list-style: none;
+        font-feature-settings: 'tnum', 'tnum';
+        transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+
+      .ant-spin-lg .ant-spin-dot {
+        font-size: 32px;
+      }
+
+      .ant-spin-dot-spin {
+        transform: rotate(45deg);
+        animation: antRotate 1.2s linear infinite;
+      }
+
+      .ant-spin-dot {
+        position: relative;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        font-size: 20px;
+      }
+
+      .ant-spin-lg .ant-spin-dot i {
+        width: 14px;
+        height: 14px;
+      }
+
+      .ant-spin-dot-item:first-child {
+        top: 0;
+        left: 0;
+      }
+
+      .ant-spin-dot-item:nth-child(2) {
+        top: 0;
+        right: 0;
+        animation-delay: 0.4s;
+      }
+
+      .ant-spin-dot-item:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        animation-delay: 0.8s;
+      }
+
+      .ant-spin-dot-item:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        animation-delay: 1.2s;
+      }
+
+      .ant-spin-dot-item {
+        position: absolute;
+        display: block;
+        width: 9px;
+        height: 9px;
+        background-color: #1890ff;
+        border-radius: 100%;
+        transform: scale(0.75);
+        transform-origin: 50% 50%;
+        opacity: 0.3;
+        animation: antSpinMove 1s linear infinite alternate;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div style="padding-top: 100px; text-align: center">
+        <div class="ant-spin ant-spin-lg ant-spin-spinning">
+          <span class="ant-spin-dot ant-spin-dot-spin">
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <% if (htmlWebpackPlugin.options.isProduction) { %>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <% } %>
+  </body>
+</html>

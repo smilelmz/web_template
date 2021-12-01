@@ -1,0 +1,171 @@
+html,
+body {
+  font-weight: @bodyFontWeight;
+}
+
+.ant-design-pro.ant-pro-basicLayout {
+  .ant-layout-sider {
+    &.ant-pro-sider {
+      background-color: @sideBgColor;
+    }
+
+    .ant-layout-sider-children {
+      // 顶部logo
+
+      .ant-pro-sider-logo {
+        color: @sideLogoFontColor;
+
+        .pupulogo {
+          color: @logColor;
+        }
+      }
+
+      // 菜单
+
+      .ant-menu {
+        &.ant-menu-dark {
+          background-color: @sideBgColor;
+        }
+
+        .ant-menu-item {
+          &.ant-menu-item-active {
+            background-color: @sideActiveColor;
+          }
+
+          .ant-pro-menu-item {
+            .anticon {
+              color: @sideFontColor;
+              font-size: @sideIconSize;
+            }
+
+            .ant-pro-menu-item-title {
+              color: @sideFontColor;
+            }
+          }
+
+          &.ant-menu-item-selected {
+            background-color: @sideSelectedColor;
+            border-right: 3px solid @sideSelectedBorderColor;
+
+            .ant-pro-menu-item {
+              .anticon {
+                color: @sideSelectedFontColor;
+              }
+
+              .ant-pro-menu-item-title {
+                color: @sideSelectedFontColor;
+              }
+            }
+          }
+        }
+
+        .ant-menu-submenu {
+          &.ant-menu-submenu-active {
+            background-color: @sideActiveColor;
+          }
+
+          &.ant-menu-submenu-open {
+            border-right: @sideSelectedSubBorderWidth solid @sideSelectedSubBorderColor;
+
+            .ant-menu-submenu-arrow {
+              &::before {
+                background: @sideFontColor;
+              }
+
+              &::after {
+                background: @sideFontColor;
+              }
+            }
+          }
+
+          .ant-pro-menu-item {
+            .anticon {
+              color: @sideFontColor;
+              font-size: @sideIconSize;
+            }
+
+            .ant-pro-menu-item-title {
+              color: @sideFontColor;
+            }
+          }
+
+          .ant-menu-submenu-arrow {
+            &::before {
+              background: @sideFontColor;
+            }
+
+            &::after {
+              background: @sideFontColor;
+            }
+          }
+
+          .ant-menu-sub {
+            background-color: @sideSubBgColor;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: @primaryColor;
+  }
+
+  .ant-switch {
+    &.ant-switch-checked {
+      .ant-switch-handle {
+        left: calc(57%);
+      }
+    }
+  }
+}
+
+.disabledClick {
+  color: rgba(0, 0, 0, 0.25) !important;
+  cursor: not-allowed !important;
+}
+
+.operateLabel:hover {
+  text-decoration: underline !important;
+}
+
+.ant-pro-page-container-warp {
+  .ant-page-header {
+    padding: 0;
+
+    &.has-breadcrumb {
+      padding: 10px 24px;
+    }
+
+    .ant-breadcrumb {
+      line-height: 32px;
+    }
+  }
+}
+
+.@{base-prefix}home-page {
+  width: 100%;
+  height: 100%;
+
+  &__extra {
+    .ant-pro-page-container-warp {
+      .ant-page-header {
+        display: flex;
+        padding: 10px 24px;
+
+        .ant-breadcrumb {
+          .flex-center-vertical();
+        }
+
+        .ant-page-header-heading {
+          flex: 1;
+          margin-top: 0;
+
+          .ant-page-header-heading-extra {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
